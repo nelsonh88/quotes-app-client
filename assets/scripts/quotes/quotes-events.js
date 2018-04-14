@@ -12,10 +12,27 @@ const onCreateQuote = function (event) {
     .catch(ui.createQuoteFailure)
 }
 
+const onIndexQuotes = function (event) {
+  event.preventDefault()
+  api.indexQuotes()
+    .then(ui.indexQuotesSuccess)
+    .catch(ui.indexQuotesFailure)
+}
+
+const onShowQuote = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const quote = data.quote
+  // console.log(event)
+  api.showQuote(quote.id)
+    .then(ui.showQuoteSuccess)
+    .catch(ui.showQuoteFailure)
+}
+
 const addHandlers = () => {
   $('#create-quote').on('submit', onCreateQuote)
-  // $('#get-quotes').on('submit', onGetQuotes)
-  // $('#get-quote').on('submit', onGetQuote)
+  $('#index-quotes').on('submit', onIndexQuotes)
+  $('#show-quote').on('submit', onShowQuote)
   // $('#update-quote').on('submit', onUpdateQuote)
   // $('#delete-quote').on('submit', onDeleteQuote)
 }

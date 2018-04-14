@@ -67,5 +67,30 @@
         <input class="btn btn-primary" type="submit" value="Create Quote!">
       </form>
 
+      <a class="btn btn-primary" data-toggle="collapse" href="#index-quotes" role="button" aria-expanded="false" aria-controls="collapseExample">Show All Quotes</a>
+        <form id="index-quotes" class="border collapse">
+          <fieldset>
+            <div class="form-group">
+              <legend>Get All Quotes</legend>
+              <input class="btn btn-primary" type="submit" value="Get All Quotes!">
+            </div>
+          </fieldset>
+        </form>
+
+          <a class="btn btn-primary" data-toggle="collapse" href="#show-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Show A Specific Quote</a>
+            <form id="show-quote" class="border collapse">
+              <fieldset>
+                <div class="form-group">
+                  <legend>Get A Quote</legend>
+                  <label for="show-quote-id">ID of Quote</label>
+                  <input id="show-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                </div>
+                <input class="btn btn-primary" type="submit" value="Get A Quote!">
+              </fieldset>
+            </form>
+
+
+
+
     </body>
 </html>
