@@ -51,5 +51,21 @@
       <input type="submit" value="Sign out!">
     </form>
 
+    <a class="btn btn-primary" data-toggle="collapse" href="#create-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Create New Quote</a>
+      <form id="create-quote" class="border collapse">
+        <fieldset>
+          <div class="form-group">
+            <legend>Create Quote</legend>
+            <label for="create-quote-title">Title</label>
+            <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
+            <label for="create-quote-quote">Quote</label>
+            <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
+            <label for="create-quote-author">Author</label>
+            <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="author">
+          </div>
+        </fieldset>
+        <input class="btn btn-primary" type="submit" value="Create Quote!">
+      </form>
+
     </body>
 </html>
