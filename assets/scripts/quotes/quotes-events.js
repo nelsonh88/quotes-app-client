@@ -29,11 +29,19 @@ const onShowQuote = function (event) {
     .catch(ui.showQuoteFailure)
 }
 
+const onUpdateQuote = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateQuote(data)
+    .then(ui.updateQuoteSuccess)
+    .catch(ui.updateQuoteFailure)
+}
+
 const addHandlers = () => {
   $('#create-quote').on('submit', onCreateQuote)
   $('#index-quotes').on('submit', onIndexQuotes)
   $('#show-quote').on('submit', onShowQuote)
-  // $('#update-quote').on('submit', onUpdateQuote)
+  $('#update-quote').on('submit', onUpdateQuote)
   // $('#delete-quote').on('submit', onDeleteQuote)
 }
 

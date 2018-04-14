@@ -61,7 +61,7 @@
             <label for="create-quote-quote">Quote</label>
             <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
             <label for="create-quote-author">Author</label>
-            <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="author">
+            <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author">
           </div>
         </fieldset>
         <input class="btn btn-primary" type="submit" value="Create Quote!">
@@ -89,7 +89,23 @@
               </fieldset>
             </form>
 
-
+            <a class="btn btn-primary" data-toggle="collapse" href="#update-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Quote</a>
+              <form id="update-quote" class="border collapse">
+                <fieldset>
+                  <div class="form-group">
+                    <legend>Update Quote</legend>
+                    <label for="update-quote-id">ID</label>
+                    <input id="update-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                    <label for="update-quote-title">Title</label>
+                    <input id="update-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
+                    <label for="update-quote-quote">Quote</label>
+                    <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
+                    <label for="update-quote-author">Author</label>
+                    <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author">
+                  </div>
+                </fieldset>
+                <input class="btn btn-primary" type="submit" value="Update Quote!">
+              </form>
 
 
     </body>

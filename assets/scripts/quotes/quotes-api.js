@@ -37,9 +37,22 @@ const showQuote = function (id) {
   })
 }
 
+const updateQuote = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/quotes/' + data.quote.id,
+    method: 'PATCH',
+    headers: {
+      ContentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   createQuote,
   indexQuotes,
-  showQuote
+  showQuote,
+  updateQuote
 
 }

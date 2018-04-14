@@ -43,11 +43,27 @@ const showQuoteFailure = function (error) {
   console.error(error)
 }
 
+const updateQuoteSuccess = function (data) {
+  $('#message').text('Updated quote!')
+  $('#message').css('background-color', 'green')
+  console.log(data)
+
+  console.log('successfully updated quote')
+}
+
+const updateQuoteFailure = function (error) {
+  $('#message').text('Error on updating quote')
+  $('#message').css('background-color', 'red')
+  console.error(error)
+}
+
 module.exports = {
   createQuoteSuccess,
   createQuoteFailure,
   indexQuotesSuccess,
   indexQuotesFailure,
   showQuoteSuccess,
-  showQuoteFailure
+  showQuoteFailure,
+  updateQuoteSuccess,
+  updateQuoteFailure
 }
