@@ -57,6 +57,18 @@ const updateQuoteFailure = function (error) {
   console.error(error)
 }
 
+const deleteQuoteSuccess = function (data) {
+  $('#message').text('Deleted quote!')
+  $('#message').css('background-color', 'green')
+
+  console.log('successfully deleted quote')
+}
+
+const deleteQuoteFailure = function (error) {
+  $('#message').text('Error on deleting quote')
+  $('#message').css('background-color', 'red')
+  console.error(error)
+}
 module.exports = {
   createQuoteSuccess,
   createQuoteFailure,
@@ -65,5 +77,7 @@ module.exports = {
   showQuoteSuccess,
   showQuoteFailure,
   updateQuoteSuccess,
-  updateQuoteFailure
+  updateQuoteFailure,
+  deleteQuoteSuccess,
+  deleteQuoteFailure
 }

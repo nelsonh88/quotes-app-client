@@ -49,10 +49,22 @@ const updateQuote = function (data) {
   })
 }
 
+const deleteQuote = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/quotes/' + id,
+    method: 'DELETE',
+    headers: {
+      ContentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createQuote,
   indexQuotes,
   showQuote,
-  updateQuote
+  updateQuote,
+  deleteQuote
 
 }
