@@ -40,11 +40,25 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onShowAllUsers = function (event) {
+  let data
+  if (event !== undefined) {
+    event.preventDefault()
+    data = getFormFields(event.target)
+  }
+  else { data = '' }
+  api.index(data)
+    .then(ui.allUsersSuccess)
+    // .catch(ui.allUserFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#index-users').on('submit', onShowAllUsers)
+  onShowAllUsers()
 }
 
 module.exports = {

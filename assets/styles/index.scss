@@ -1,2 +1,74 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// #message, #sign-up, #sign-in, #change-password,
+// #sign-out, #quotes-actions {
+//   display: none;
+// }
+
+body {
+  background: url("../images/cloud_background.jpg") no-repeat;
+  background-attachment: fixed;
+}
+header {
+    width: 100%;
+    background: #3a5d90;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+header img {
+    width: 1.3em;
+    vertical-align: bottom;
+    margin-right: .2em;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+footer {
+    background: #3a5d90;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+footer button.btn.btn-outline-secondary:first-child {
+    margin-right: 20px;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    z-index: 2;
+    position: relative;
+}
+
+p.lede {
+    margin-bottom: 20px;
+}
+
+body:after {
+    content: '';
+    height: 100vh;
+    width: 100%;
+    background: white;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: .5;
+}

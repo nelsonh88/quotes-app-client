@@ -1,5 +1,4 @@
 'use strict'
-
 const authEvents = require('./auth/auth-events.js')
 const quoteEvents = require('./quotes/quotes-events.js')
 
@@ -13,3 +12,6 @@ $(() => {
   authEvents.addHandlers()
   quoteEvents.addHandlers()
 })
+// $(document).ready(function(){
+//   authEvents.onShowAllUsers()
+// })

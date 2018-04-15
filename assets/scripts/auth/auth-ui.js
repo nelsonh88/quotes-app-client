@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const userTemplate = require('../templates/users-quotes.handlebars')
 // above is for the token as well
 
 const signUpSuccess = function (data) {
@@ -51,6 +52,14 @@ const signOutFailure = function (error) {
   $('#message').css('background-color', 'red')
 }
 
+const allUsersSuccess = function (data) {
+  console.log('data is ', data)
+  const showUsersQuotesHtml = userTemplate({users: data.users})
+  $('#message').text('quotes')
+  $('#message').css('background-color', 'green')
+  $('#content').html(showUsersQuotesHtml)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -59,5 +68,6 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  allUsersSuccess
 }

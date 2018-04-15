@@ -50,9 +50,21 @@ const signOut = function (data) {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    url: config.apiUrl + '/users',
+    method: 'GET',
+    headers: {
+      ContentType: 'application/json'
+      // Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  index
 }

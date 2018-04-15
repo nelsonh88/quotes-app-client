@@ -1,0 +1,18 @@
+
+
+{{#each users as |user|}}
+
+<h1 data-id="{{user.id}}">
+  <small>
+    <h1>User: {{user.first_name}} {{user.last_name}}</button>
+      {{#each user.quotes as |quote|}}
+    <h2>{{quote.title}}</h2>{{/each}}
+  </small>
+</h1>
+
+{{/each}}
+
+
+{{#each quotes as |quote|}}
+<h3>quote.title</h3>
+{{/each}}

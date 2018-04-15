@@ -6,17 +6,19 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+      <link href="https://fonts.googleapis.com/css?family=Kanit:700" rel="stylesheet">
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Browser Template</h1>
+    <body>
+      <header>
+        <h1><img src="./assets/images/peak.svg"/>MotivationQ</h1>
+      </header>
 
-      <p id="message"></p>
+      <p id="message" style="display:none"></p>
 
-      <form id="sign-up" class="border">
+      <form id="sign-up" class="border" style="display:none">
         <fieldset>
           <legend>Sign up!</legend>
           <input type="text" name="credentials[first_name]" placeholder="First Name">
@@ -28,7 +30,7 @@
         </fieldset  >
       </form>
 
-      <form id="sign-in" class="border">
+      <form id="sign-in" class="border" style="display:none">
         <fieldset>
           <legend>Sign in!</legend>
           <input type="text" name="credentials[email]" placeholder="Email">
@@ -37,7 +39,7 @@
         </fieldset>
       </form>
 
-      <form id="change-password" class="border">
+      <form id="change-password" class="border" style="display:none">
         <fieldset>
           <legend>change-password</legend>
           <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -46,78 +48,101 @@
         </fieldset>
     </form>
 
-    <form id="sign-out" class="border">
+    <form id="sign-out" class="border" style="display:none">
       <legend>sign-out</legend>
       <input type="submit" value="Sign out!">
     </form>
 
-    <a class="btn btn-primary" data-toggle="collapse" href="#create-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Create New Quote</a>
-      <form id="create-quote" class="border collapse">
-        <fieldset>
-          <div class="form-group">
-            <legend>Create Quote</legend>
-            <label for="create-quote-title">Title</label>
-            <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
-            <label for="create-quote-quote">Quote</label>
-            <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
-            <label for="create-quote-author">Author</label>
-            <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author">
-          </div>
-        </fieldset>
-        <input class="btn btn-primary" type="submit" value="Create Quote!">
-      </form>
+                <div class="container-fluid">
+                  <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia a massa nec sodales. Nullam auctor lacus eget neque imperdiet ornare vel a arcu.</p>
+                  <div id="content"></div>
+                  <div id="quotes-actions">
+                      <a class="btn btn-primary" data-toggle="collapse" href="#create-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Create New Quote</a>
+                        <form id="create-quote" class="border collapse">
+                          <fieldset>
+                            <div class="form-group">
+                              <legend>Create Quote</legend>
+                              <label for="create-quote-title">Title</label>
+                              <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
+                              <label for="create-quote-quote">Quote</label>
+                              <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
+                              <label for="create-quote-author">Author</label>
+                              <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author">
+                            </div>
+                          </fieldset>
+                          <input class="btn btn-primary" type="submit" value="Create Quote!">
+                        </form>
 
-      <a class="btn btn-primary" data-toggle="collapse" href="#index-quotes" role="button" aria-expanded="false" aria-controls="collapseExample">Show All Quotes</a>
-        <form id="index-quotes" class="border collapse">
-          <fieldset>
-            <div class="form-group">
-              <legend>Get All Quotes</legend>
-              <input class="btn btn-primary" type="submit" value="Get All Quotes!">
-            </div>
-          </fieldset>
-        </form>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#index-quotes" role="button" aria-expanded="false" aria-controls="collapseExample">Show All Quotes</a>
+                          <form id="index-quotes" class="border collapse">
+                            <fieldset>
+                              <div class="form-group">
+                                <legend>Get All Quotes</legend>
+                                <input class="btn btn-primary" type="submit" value="Get All Quotes!">
+                              </div>
+                            </fieldset>
+                          </form>
 
-          <a class="btn btn-primary" data-toggle="collapse" href="#show-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Show A Specific Quote</a>
-            <form id="show-quote" class="border collapse">
-              <fieldset>
-                <div class="form-group">
-                  <legend>Get A Quote</legend>
-                  <label for="show-quote-id">ID of Quote</label>
-                  <input id="show-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                            <a class="btn btn-primary" data-toggle="collapse" href="#show-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Show A Specific Quote</a>
+                              <form id="show-quote" class="border collapse">
+                                <fieldset>
+                                  <div class="form-group">
+                                    <legend>Get A Quote</legend>
+                                    <label for="show-quote-id">ID of Quote</label>
+                                    <input id="show-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                                  </div>
+                                  <input class="btn btn-primary" type="submit" value="Get A Quote!">
+                                </fieldset>
+                              </form>
+
+                              <a class="btn btn-primary" data-toggle="collapse" href="#update-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Quote</a>
+                                <form id="update-quote" class="border collapse">
+                                  <fieldset>
+                                    <div class="form-group">
+                                      <legend>Update Quote</legend>
+                                      <label for="update-quote-id">ID</label>
+                                      <input id="update-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                                      <label for="update-quote-title">Title</label>
+                                      <input id="update-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
+                                      <label for="update-quote-quote">Quote</label>
+                                      <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
+                                      <label for="update-quote-author">Author</label>
+                                      <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author">
+                                    </div>
+                                  </fieldset>
+                                  <input class="btn btn-primary" type="submit" value="Update Quote!">
+                                </form>
+
+                                <a class="btn btn-primary" data-toggle="collapse" href="#delete-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Delete a Quote</a>
+                                  <form id="delete-quote" class="border collapse">
+                                    <fieldset>
+                                      <div class="form-group">
+                                        <legend>Delete A Quote</legend>
+                                        <label for="delete-quote-id">ID of Quote</label>
+                                        <input id="delete-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                                      </div>
+                                      <input class="btn btn-primary" type="submit" value="Delete A Quote!">
+                                    </fieldset>
+                                  </form>
+
+                                  <a class="btn btn-primary" data-toggle="collapse" href="#index-users" role="button" aria-expanded="false" aria-controls="collapseExample">Show All Users</a>
+                                    <form id="index-users" class="border collapse">
+                                      <fieldset>
+                                        <div class="form-group">
+                                          <legend>Get All Users</legend>
+                                          <input class="btn btn-primary" type="submit" value="Get All Users!">
+                                        </div>
+                                      </fieldset>
+                                    </form>
+                                  </div>
                 </div>
-                <input class="btn btn-primary" type="submit" value="Get A Quote!">
-              </fieldset>
-            </form>
 
-            <a class="btn btn-primary" data-toggle="collapse" href="#update-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Quote</a>
-              <form id="update-quote" class="border collapse">
-                <fieldset>
-                  <div class="form-group">
-                    <legend>Update Quote</legend>
-                    <label for="update-quote-id">ID</label>
-                    <input id="update-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
-                    <label for="update-quote-title">Title</label>
-                    <input id="update-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
-                    <label for="update-quote-quote">Quote</label>
-                    <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
-                    <label for="update-quote-author">Author</label>
-                    <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author">
-                  </div>
-                </fieldset>
-                <input class="btn btn-primary" type="submit" value="Update Quote!">
-              </form>
 
-              <a class="btn btn-primary" data-toggle="collapse" href="#delete-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Delete a Quote</a>
-                <form id="delete-quote" class="border collapse">
-                  <fieldset>
-                    <div class="form-group">
-                      <legend>Delete A Quote</legend>
-                      <label for="delete-quote-id">ID of Quote</label>
-                      <input id="delete-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
-                    </div>
-                    <input class="btn btn-primary" type="submit" value="Delete A Quote!">
-                  </fieldset>
-                </form>
+<footer>
+  <button class="btn btn-outline-secondary">Sign In</button>
+  <button class="btn btn-outline-secondary">Sign Up</button>
+
+</footer>
 
 
     </body>
