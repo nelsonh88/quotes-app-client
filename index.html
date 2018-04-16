@@ -18,27 +18,6 @@
 
       <p id="message" style="display:none"></p>
 
-      <form id="sign-up" class="border" style="display:none">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <input type="text" name="credentials[first_name]" placeholder="First Name">
-          <input type="text" name="credentials[last_name]" placeholder="Last Name">
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Sign up!">
-        </fieldset  >
-      </form>
-
-      <form id="sign-in" class="border" style="display:none">
-        <fieldset>
-          <legend>Sign in!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="submit" value="Sign-in">
-        </fieldset>
-      </form>
-
       <form id="change-password" class="border" style="display:none">
         <fieldset>
           <legend>change-password</legend>
@@ -54,6 +33,7 @@
     </form>
 
                 <div class="container-fluid">
+
                   <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia a massa nec sodales. Nullam auctor lacus eget neque imperdiet ornare vel a arcu.</p>
                   <div id="content"></div>
                   <div id="quotes-actions">
@@ -139,10 +119,105 @@
 
 
 <footer>
-  <button class="btn btn-outline-secondary">Sign In</button>
-  <button class="btn btn-outline-secondary">Sign Up</button>
-
+  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
 </footer>
+
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sign-in-modal-title">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="sign-in" class="border">
+          <fieldset>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-1">Email</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[email]" aria-label="Default" aria-describedby="inputGroup-sizing-default-1">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-2">Password</span>
+              </div>
+              <input type="password" class="form-control" name="credentials[password]" aria-label="Default" aria-describedby="inputGroup-sizing-default-2">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" value="Sign-in">Sign In</button>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Below is sign-up modal -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sign-up-modal-title">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="sign-up" class="border">
+          <fieldset>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-3">First Name</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[first_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-3">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-4">Last Name</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[last_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-4">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-5">Email</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[email]" aria-label="Default" aria-describedby="inputGroup-sizing-default-5">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-6">Password</span>
+              </div>
+              <input type="password" class="form-control" name="credentials[password]" aria-label="Default" aria-describedby="inputGroup-sizing-default-6">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-7">Confirm Password</span>
+              </div>
+              <input type="password" class="form-control" name="credentials[password_confirmation]" aria-label="Default" aria-describedby="inputGroup-sizing-default-7">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" value="Sign-up">Sign Up</button>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
     </body>

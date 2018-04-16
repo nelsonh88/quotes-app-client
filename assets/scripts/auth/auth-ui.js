@@ -7,6 +7,7 @@ const userTemplate = require('../templates/users-quotes.handlebars')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up Successfully!')
   $('#message').css('background-color', 'green')
+  $('#sign-up-modal').modal('hide')
   console.log(data)
 }
 
@@ -19,6 +20,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Signed in Successfully!')
   $('#message').css('background-color', 'green')
+  $('#sign-in-modal').modal('hide')
   console.log(data)
   // below is for the token
   store.user = data.user

@@ -2,17 +2,14 @@
 
 {{#each users as |user|}}
 
-<h1 data-id="{{user.id}}">
-  <small>
-    <h1>User: {{user.first_name}} {{user.last_name}}</button>
-      {{#each user.quotes as |quote|}}
-    <h2>{{quote.title}}</h2>{{/each}}
-  </small>
-</h1>
 
-{{/each}}
+    {{#each user.quotes as |quote|}}
+    <div class="quote-block">
+      <a class="user" href="javascript:void(0)">{{user.first_name}} {{user.last_name}}</a>
+      <p class="quote">{{quote.quote}}</p>
+      <p class="author">{{quote.author}}</p>
+    </div>
+    {{/each}}
 
 
-{{#each quotes as |quote|}}
-<h3>quote.title</h3>
 {{/each}}

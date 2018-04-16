@@ -9,6 +9,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   background: url("../images/cloud_background.jpg") no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
 header {
     width: 100%;
@@ -67,8 +68,47 @@ body:after {
     width: 100%;
     background: white;
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 1;
     opacity: .5;
+}
+
+.user {
+  display: none;
+}
+
+p.quote {
+    font-size: 1.2em;
+}
+
+p.quote:before {
+    content: '"';
+}
+
+p.quote:after {
+    content: '"';
+}
+
+.quote-block {
+    padding: 1em;
+    border-bottom: 1px dotted;
+}
+
+p.author {
+    text-align: right;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #3a5d90;
+}
+
+p.author:before {
+    content: '~';
+    margin-right:  5px;
+    font-size: 1.2em;
+}
+
+.input-group.mb-3 {
+    width: 100%;
+    margin-bottom: 2em;
 }
