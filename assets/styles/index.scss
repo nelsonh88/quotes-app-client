@@ -52,14 +52,24 @@ footer button.btn.btn-outline-secondary:first-child {
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 80px;
     z-index: 2;
     position: relative;
 }
 
+.hasMessage .container-fluid {
+  margin-top: 100px;
+}
+
 p.lede {
     margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: .5em 1em;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid royalblue;
 }
 
 body:after {
@@ -140,6 +150,11 @@ p.author:before {
 }
 
 #message {
-  position: absolute;
-  z-index: 50;
+    position: absolute;
+    z-index: 9;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    top: 68px;
+    text-align: center;
 }

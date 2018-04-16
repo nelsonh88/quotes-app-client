@@ -1,0 +1,24 @@
+
+
+{{#each quotes as |quote|}}
+<div class="quote-block">
+  <div class="quote-crud">
+    <button class="btn btn-outline-secondary">Update</button>
+    <button class="btn btn-outline-secondary">Delete</button>
+  </div>
+  <p class="quote">{{quote.quote}}</p>
+  <p class="author">{{quote.author}}</p>
+</div>
+      <!-- <div class="user">
+        <span>Submitted by</span>
+        <a href="javascript:void(0)">{{user.first_name}} {{user.last_name}}</a>
+      </div>
+    {{#each user.quotes as |quote|}}
+    <div class="quote-block">
+      <p class="quote">{{quote.quote}}</p>
+      <p class="author">{{quote.author}}</p>
+    </div>
+    {{/each}} -->
+
+
+{{/each}}

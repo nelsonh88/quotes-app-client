@@ -1,5 +1,6 @@
 'use strict'
 
+const ownedQuotesTemplate = require('../templates/owned-quotes.handlebars')
 // const store = require('../store')
 // above is for the token as well
 
@@ -18,7 +19,9 @@ const createQuoteFailure = function (error) {
 const indexQuotesSuccess = function (data) {
   $('#message').text('Retrieved all quotes!')
   $('#message').css('background-color', 'green')
-  console.log(data)
+  console.log('index is ', data.quotes)
+  const showUsersOwnedQuotesHtml = ownedQuotesTemplate({quotes: data.quotes})
+  $('#content').html(showUsersOwnedQuotesHtml)
 
   console.log('successfully got all quotes')
 }
