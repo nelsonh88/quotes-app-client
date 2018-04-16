@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>MotivationQ</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,10 +13,12 @@
     </head>
     <body>
       <header>
-        <h1><img src="./assets/images/peak.svg"/>MotivationQ</h1>
+        <div class="brand">
+          <h1><img src="./assets/images/peak.svg"/>MotivationQ</h1>
+        </div>
       </header>
 
-      <p id="message" style="display:none"></p>
+      <p id="message"></p>
 
       <form id="change-password" class="border" style="display:none">
         <fieldset>
@@ -25,11 +27,6 @@
           <input type="password" name="passwords[new]" placeholder="New Password">
           <input type="submit" value="Change Password!">
         </fieldset>
-    </form>
-
-    <form id="sign-out" class="border" style="display:none">
-      <legend>sign-out</legend>
-      <input type="submit" value="Sign out!">
     </form>
 
                 <div class="container-fluid">
@@ -119,10 +116,18 @@
 
 
 <footer>
+  <div class="loginbuttons">
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+  </div>
+  <div class="signedinbuttons">
+  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-in-modal">Change Password</button>
+  <button id="sign-out" type="button" class="btn btn-outline-secondary">Sign Out</button>
+  </div>
 </footer>
 
+
+<!-- Below is sign-in modal -->
 <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

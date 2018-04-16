@@ -21,9 +21,14 @@ const signInSuccess = function (data) {
   $('#message').text('Signed in Successfully!')
   $('#message').css('background-color', 'green')
   $('#sign-in-modal').modal('hide')
+  $('#quotes-actions').show()
+  $('body').addClass('signed-in')
+
   console.log(data)
   // below is for the token
   store.user = data.user
+  welcomeText(data)
+  $('.user').show()
 }
 
 const signInFailure = function (error) {
@@ -46,6 +51,9 @@ const changePasswordFailure = function (error) {
 const signOutSuccess = function (data) {
   $('#message').text('Signed out Successfully!')
   $('#message').css('background-color', 'green')
+  console.log('signed out big dawg')
+  $('body').removeClass('signed-in')
+  $('#quotes-actions').hide()
 }
 
 const signOutFailure = function (error) {
@@ -62,6 +70,11 @@ const allUsersSuccess = function (data) {
   $('#content').html(showUsersQuotesHtml)
 }
 
+const welcomeText = function (data) {
+  const newLede = `Welcome ${data.user.first_name}! Below you will find options to get your quotes and create quotes`
+  $('.lede').text(newLede)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -71,5 +84,6 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  allUsersSuccess
+  allUsersSuccess,
+  welcomeText
 }

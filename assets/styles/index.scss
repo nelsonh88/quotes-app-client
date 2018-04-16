@@ -28,7 +28,7 @@ header img {
     margin-right: .2em;
 }
 
-header h1 {
+.brand h1 {
     margin: 0;
     font-family: 'Kanit', sans-serif;
 }
@@ -111,4 +111,35 @@ p.author:before {
 .input-group.mb-3 {
     width: 100%;
     margin-bottom: 2em;
+}
+
+#quotes-actions {
+  display: none;
+}
+
+.user {
+    border: 1px solid royalblue;
+    padding: 10px;
+    border-radius: 8px 8px 0;
+    margin-bottom: 1em;
+    background: white;
+    margin-top: 2em;
+}
+
+.signedinbuttons {
+  display: none;
+}
+
+.signed-in .loginbuttons {
+  display: none;
+
+}
+
+.signed-in .signedinbuttons {
+  display: block;
+}
+
+#message {
+  position: absolute;
+  z-index: 50;
 }

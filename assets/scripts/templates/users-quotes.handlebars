@@ -2,10 +2,14 @@
 
 {{#each users as |user|}}
 
-
+      <div class="user">
+        <span>Submitted by</span>
+        <a href="javascript:void(0)">{{user.first_name}} {{user.last_name}}</a>
+      </div>
     {{#each user.quotes as |quote|}}
     <div class="quote-block">
-      <a class="user" href="javascript:void(0)">{{user.first_name}} {{user.last_name}}</a>
+
+
       <p class="quote">{{quote.quote}}</p>
       <p class="author">{{quote.author}}</p>
     </div>
