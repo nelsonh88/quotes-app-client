@@ -8,18 +8,15 @@ const userTemplate = require('../templates/users-quotes.handlebars')
 // above is for the token as well
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up Successfully!')
-  $('#message').removeClass('alert-danger').addClass('alert-success').show()
-  $('#message').delay(3000).slideToggle()
+  generateMessage('Signed up Successfully!', 'success')
   $('#sign-up-modal').modal('hide')
   console.log(data)
 }
 
 const signUpFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on signing up!')
-  $('#message').removeClass('alert-success').addClass('alert-danger').show()
-  $('#message').delay(3000).slideToggle()
+  generateMessage('Error on signing up!', 'danger')
+  $('#sign-up-modal').modal('hide')
 }
 
 const signInSuccess = function (data) {
@@ -38,33 +35,25 @@ const signInSuccess = function (data) {
 
 const signInFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on signing in!')
-  $('#message').removeClass('alert-success').addClass('alert-danger').show()
-  $('#message').delay(3000).slideToggle()
+  generateMessage('Error on signing in!', 'danger')
   $('#sign-in-modal').modal('hide')
 }
 
 const changePasswordSuccess = function (data) {
-  $('#message').text('Change password Successfully!')
-  $('#message').removeClass('alert-danger').addClass('alert-success').show()
-  $('#message').delay(3000).slideToggle()
+  generateMessage('Successfully changed password!', 'success')
 }
 
 const changePasswordFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on changing password!')
-  $('#message').removeClass('alert-success').addClass('alert-danger').show()
-  $('#message').delay(3000).slideToggle()
+  generateMessage('Error on changing password!', 'danger')
 }
 
 const signOutSuccess = function (data) {
-  $('#message').text('Signed out Successfully!')
-  $('#message').removeClass('alert-danger').addClass('alert-success').show()
-  $('#message').delay(3000).slideToggle()
   console.log('signed out big dawg')
   $('body').removeClass('signed-in')
   $('#quotes-actions').hide()
-  localStorage.removeItem('userid')
+  byeText()
+  $('#content').hide()
 }
 
 const signOutFailure = function (error) {
@@ -82,6 +71,11 @@ const allUsersSuccess = function (data) {
 
 const welcomeText = function (data) {
   const newLede = `Welcome ${data.user.first_name}! Below you will find options to get your quotes and create quotes`
+  $('.lede').text(newLede)
+}
+
+const byeText = function () {
+  const newLede = 'Thank you, you have been successfully logged out. Stay motivated!!'
   $('.lede').text(newLede)
 }
 
