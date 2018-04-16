@@ -31,11 +31,11 @@
                             <div class="form-group">
                               <legend>Create Quote</legend>
                               <label for="create-quote-title">Title</label>
-                              <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
+                              <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title" required>
                               <label for="create-quote-quote">Quote</label>
-                              <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby">
+                              <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
                               <label for="create-quote-author">Author</label>
-                              <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author">
+                              <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
                             </div>
                           </fieldset>
                           <input class="btn btn-primary" type="submit" value="Create Quote!">
@@ -174,35 +174,35 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default-3">First Name</span>
               </div>
-              <input type="text" class="form-control" name="credentials[first_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-3">
+              <input type="text" class="form-control" name="credentials[first_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-3" required>
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default-4">Last Name</span>
               </div>
-              <input type="text" class="form-control" name="credentials[last_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-4">
+              <input type="text" class="form-control" name="credentials[last_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-4" required>
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default-5">Email</span>
               </div>
-              <input type="text" class="form-control" name="credentials[email]" aria-label="Default" aria-describedby="inputGroup-sizing-default-5">
+              <input type="text" class="form-control" name="credentials[email]" aria-label="Default" aria-describedby="inputGroup-sizing-default-5" required>
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default-6">Password</span>
               </div>
-              <input type="password" class="form-control" name="credentials[password]" aria-label="Default" aria-describedby="inputGroup-sizing-default-6">
+              <input type="password" class="form-control" name="credentials[password]" aria-label="Default" aria-describedby="inputGroup-sizing-default-6" required>
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default-7">Confirm Password</span>
               </div>
-              <input type="password" class="form-control" name="credentials[password_confirmation]" aria-label="Default" aria-describedby="inputGroup-sizing-default-7">
+              <input type="password" class="form-control" name="credentials[password_confirmation]" aria-label="Default" aria-describedby="inputGroup-sizing-default-7" required>
             </div>
 
 
@@ -245,7 +245,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary" value="change-password">Sign In</button>
+            <button type="submit" class="btn btn-primary" value="change-password">Change Password</button>
           </fieldset>
         </form>
 

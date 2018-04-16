@@ -49,7 +49,7 @@ const onShowAllUsers = function (event) {
   else { data = '' }
   api.index(data)
     .then(ui.allUsersSuccess)
-    // .catch(ui.allUserFailure)
+    .catch(ui.allUserFailure)
 }
 
 const addHandlers = () => {

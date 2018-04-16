@@ -11,12 +11,14 @@ const signUpSuccess = function (data) {
   generateMessage('Signed up Successfully!', 'success')
   $('#sign-up-modal').modal('hide')
   console.log(data)
+  goTop()
 }
 
 const signUpFailure = function (error) {
   console.log(error)
   generateMessage('Error on signing up!', 'danger')
   $('#sign-up-modal').modal('hide')
+  goTop()
 }
 
 const signInSuccess = function (data) {
@@ -31,23 +33,27 @@ const signInSuccess = function (data) {
   localStorage.setItem('userid', data.user.id)
   welcomeText(data)
   $('.user').show()
+  goTop()
 }
 
 const signInFailure = function (error) {
   console.log(error)
   generateMessage('Error on signing in!', 'danger')
   $('#sign-in-modal').modal('hide')
+  goTop()
 }
 
 const changePasswordSuccess = function (data) {
   generateMessage('Successfully changed password!', 'success')
   $('#change-password-modal').modal('hide')
+  goTop()
 }
 
 const changePasswordFailure = function (error) {
   console.log(error)
   generateMessage('Error on changing password!', 'danger')
   $('#change-password-modal').modal('hide')
+  goTop()
 }
 
 const signOutSuccess = function (data) {
@@ -60,15 +66,17 @@ const signOutSuccess = function (data) {
 
 const signOutFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on signing out!')
-  $('#message').removeClass('alert-success').addClass('alert-danger').show()
-  $('#message').delay(3000).slideToggle()
+  generateMessage('Error on signing out!', 'danger')
 }
 
 const allUsersSuccess = function (data) {
   console.log('data is ', data)
   const showUsersQuotesHtml = userTemplate({users: data.users})
   $('#content').html(showUsersQuotesHtml)
+}
+
+const allUsersFailure = function (data) {
+  generateMessage('Error on retrieving quotes', 'danger')
 }
 
 const welcomeText = function (data) {
@@ -91,6 +99,10 @@ const generateMessage = function (messageText, alertType) {
   })
 }
 
+const goTop = function () {
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -101,5 +113,6 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   allUsersSuccess,
+  allUsersFailure,
   welcomeText
 }
