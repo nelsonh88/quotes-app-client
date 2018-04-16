@@ -41,11 +41,13 @@ const signInFailure = function (error) {
 
 const changePasswordSuccess = function (data) {
   generateMessage('Successfully changed password!', 'success')
+  $('#change-password-modal').modal('hide')
 }
 
 const changePasswordFailure = function (error) {
   console.log(error)
   generateMessage('Error on changing password!', 'danger')
+  $('#change-password-modal').modal('hide')
 }
 
 const signOutSuccess = function (data) {

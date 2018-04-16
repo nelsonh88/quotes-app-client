@@ -20,15 +20,6 @@
 
       <p id="message"></p>
 
-      <form id="change-password" class="border" style="display:none">
-        <fieldset>
-          <legend>change-password</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-    </form>
-
                 <div class="container-fluid">
 
                   <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia a massa nec sodales. Nullam auctor lacus eget neque imperdiet ornare vel a arcu.</p>
@@ -121,7 +112,7 @@
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
   </div>
   <div class="signedinbuttons">
-  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-in-modal">Change Password</button>
+  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
   <button id="sign-out" type="button" class="btn btn-outline-secondary">Sign Out</button>
   </div>
 </footer>
@@ -224,6 +215,44 @@
   </div>
 </div>
 
+<!-- Below is change-password modal -->
+
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="change-password-modal-title">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="change-password" class="border">
+          <fieldset>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-1">Old Password</span>
+              </div>
+              <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default-8">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-2">Password</span>
+              </div>
+              <input type="password" name="passwords[new]" placeholder="New Password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default-9">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" value="change-password">Sign In</button>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
 
     </body>
 </html>
