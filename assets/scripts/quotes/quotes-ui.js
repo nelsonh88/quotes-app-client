@@ -2,7 +2,7 @@
 
 const pageMessage = $('#message')
 const ownedQuotesTemplate = require('../templates/owned-quotes.handlebars')
-// const store = require('../store')
+const store = require('../store')
 // above is for the token as well
 
 const createQuoteSuccess = function (data) {
@@ -69,6 +69,17 @@ const indexQuotesSuccessNoMessage = function (data) {
   console.log('successfully got all quotes')
 }
 
+const addQuoteSuccessful = function (data) {
+  console.log(data)
+  generateMessage('Added Quote Successfully!', 'success')
+  store.quote = data.quote
+}
+
+const addQuoteFailure = function (error) {
+  console.log(error)
+  generateMessage('Error on Adding Quote!', 'danger')
+}
+
 const generateMessage = function (messageText, alertType) {
   $('body').addClass('hasMessage')
   pageMessage.text(messageText)
@@ -90,5 +101,7 @@ module.exports = {
   updateQuoteFailure,
   deleteQuoteSuccess,
   deleteQuoteFailure,
-  indexQuotesSuccessNoMessage
+  indexQuotesSuccessNoMessage,
+  addQuoteSuccessful,
+  addQuoteFailure
 }

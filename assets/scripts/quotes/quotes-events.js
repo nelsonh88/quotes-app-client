@@ -53,6 +53,17 @@ const onDeleteQuote = function (event) {
     .catch(ui.deleteQuoteFailure)
 }
 
+const onAddQuote = function (event) {
+  console.log(event.target)
+  event.preventDefault()
+  const data = {quote: {quote: event.target.dataset.quote, author: event.target.dataset.author}}
+  console.log(event.target.dataset)
+  api.addQuote(data)
+    .then(ui.addQuoteSuccessful)
+    // .then(() => onCreate(event))
+    .catch(ui.addQuoteFailure)
+}
+
 const addHandlers = () => {
   $('#create-quote').on('submit', onCreateQuote)
   $('#index-quotes').on('submit', onIndexQuotes)
@@ -60,6 +71,7 @@ const addHandlers = () => {
   $('#update-quote').on('submit', onUpdateQuote)
   $('#delete-quote').on('submit', onDeleteQuote)
   $('#content').on('click', '.delete-quote', onDeleteQuote)
+  $('#content').on('click', '.add-quote', onAddQuote)
 }
 
 module.exports = {

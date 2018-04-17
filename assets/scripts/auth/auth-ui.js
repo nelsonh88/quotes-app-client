@@ -33,6 +33,7 @@ const signInSuccess = function (data) {
   localStorage.setItem('userid', data.user.id)
   welcomeText(data)
   $('.user').show()
+  $('.add-quote').show()
   goTop()
 }
 
