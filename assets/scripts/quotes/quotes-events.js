@@ -44,8 +44,9 @@ const onUpdateQuote = function (event) {
 const onDeleteQuote = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  const id = event.target.dataset.id
   const quote = data.quote
-  api.deleteQuote(quote.id)
+  api.deleteQuote(id)
     .then(ui.deleteQuoteSuccess)
     .then(api.indexQuotes)
     .then(ui.indexQuotesSuccessNoMessage)
@@ -58,6 +59,7 @@ const addHandlers = () => {
   $('#show-quote').on('submit', onShowQuote)
   $('#update-quote').on('submit', onUpdateQuote)
   $('#delete-quote').on('submit', onDeleteQuote)
+  $('#content').on('click', '.delete-quote', onDeleteQuote)
 }
 
 module.exports = {
