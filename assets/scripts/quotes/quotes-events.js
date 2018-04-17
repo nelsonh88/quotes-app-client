@@ -9,6 +9,8 @@ const onCreateQuote = function (event) {
   const data = getFormFields(event.target)
   api.createQuote(data)
     .then(ui.createQuoteSuccess)
+    .then(api.indexQuotes)
+    .then(ui.indexQuotesSuccessNoMessage)
     .catch(ui.createQuoteFailure)
 }
 
@@ -34,6 +36,8 @@ const onUpdateQuote = function (event) {
   const data = getFormFields(event.target)
   api.updateQuote(data)
     .then(ui.updateQuoteSuccess)
+    .then(api.indexQuotes)
+    .then(ui.indexQuotesSuccessNoMessage)
     .catch(ui.updateQuoteFailure)
 }
 
@@ -43,6 +47,8 @@ const onDeleteQuote = function (event) {
   const quote = data.quote
   api.deleteQuote(quote.id)
     .then(ui.deleteQuoteSuccess)
+    .then(api.indexQuotes)
+    .then(ui.indexQuotesSuccessNoMessage)
     .catch(ui.deleteQuoteFailure)
 }
 

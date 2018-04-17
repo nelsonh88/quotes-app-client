@@ -63,6 +63,12 @@ const deleteQuoteFailure = function (error) {
   console.error(error)
 }
 
+const indexQuotesSuccessNoMessage = function (data) {
+  const showUsersOwnedQuotesHtml = ownedQuotesTemplate({quotes: data.quotes})
+  $('#content').html(showUsersOwnedQuotesHtml)
+  console.log('successfully got all quotes')
+}
+
 const generateMessage = function (messageText, alertType) {
   $('body').addClass('hasMessage')
   pageMessage.text(messageText)
@@ -83,5 +89,6 @@ module.exports = {
   updateQuoteSuccess,
   updateQuoteFailure,
   deleteQuoteSuccess,
-  deleteQuoteFailure
+  deleteQuoteFailure,
+  indexQuotesSuccessNoMessage
 }
