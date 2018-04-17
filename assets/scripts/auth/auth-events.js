@@ -41,13 +41,13 @@ const onSignOut = function (event) {
 }
 
 const onShowAllUsers = function (event) {
-  let data
-  if (event !== undefined) {
-    event.preventDefault()
-    data = getFormFields(event.target)
-  }
-  else { data = '' }
-  api.index(data)
+  // let data
+  // if (event !== undefined) {
+  //   event.preventDefault()
+  //   data = getFormFields(event.target)
+  // }
+  // else { data = '' }
+  api.index()
     .then(ui.allUsersSuccess)
     .catch(ui.allUserFailure)
 }

@@ -8,17 +8,23 @@
       </div>
     {{#each user.quotes as |quote|}}
     <div class="quote-block">
-      <p class="quote">{{quote.quote}}</p>
-      <p class="author">{{quote.author}}</p>
+      {{#if quote}}
+        <p class="quote">{{quote.quote}}</p>
+        <p class="author">{{quote.author}}</p>
+      {{else}}
+        Looking for some motivation!
+      {{/if}}
     </div>
     {{/each}}
 
 
-{{/each}}
 
-<!-- {{#if quote}}
+
+<!-- {{#if quote.quote}}
   <p class="quote">{{quote.quote}}</p>
   <p class="author">{{quote.author}}</p>
 {{else}}
   Looking for some motivation!
 {{/if}} -->
+
+{{/each}}

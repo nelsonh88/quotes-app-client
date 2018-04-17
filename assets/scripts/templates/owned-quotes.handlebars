@@ -1,11 +1,7 @@
-<button class="btn btn-outline-secondary">Create Quote</button>
 
 {{#each quotes as |quote|}}
 <div class="quote-block">
-  <div class="quote-crud">
-    <button class="btn btn-outline-secondary">Update</button>
-    <button class="btn btn-outline-secondary">Delete</button>
-  </div>
+  <p class="quoteid">ID: {{quote.id}}</p>
   <p class="quote">{{quote.quote}}</p>
   <p class="author">{{quote.author}}</p>
 </div>

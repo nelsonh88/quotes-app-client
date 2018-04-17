@@ -1,77 +1,78 @@
 'use strict'
 
+const pageMessage = $('#message')
 const ownedQuotesTemplate = require('../templates/owned-quotes.handlebars')
 // const store = require('../store')
 // above is for the token as well
 
 const createQuoteSuccess = function (data) {
-  $('#message').text('Created Quote Successfully!')
-  $('#message').css('background-color', 'green')
+  generateMessage('Created Quote Successfully!', 'success')
   console.log(data)
 }
 
 const createQuoteFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on creating quote!')
-  $('#message').css('background-color', 'red')
+  generateMessage('Error On Creating Quote!', 'danger')
 }
 
 const indexQuotesSuccess = function (data) {
-  $('#message').text('Retrieved all quotes!')
-  $('#message').css('background-color', 'green')
+  generateMessage('Got Your Quotes Successfully!', 'success')
   console.log('index is ', data.quotes)
   const showUsersOwnedQuotesHtml = ownedQuotesTemplate({quotes: data.quotes})
   $('#content').html(showUsersOwnedQuotesHtml)
-
   console.log('successfully got all quotes')
 }
 
 const indexQuotesFailure = function (error) {
-  $('#message').text('Error on getting all quotes')
-  $('#message').css('background-color', 'red')
+  generateMessage('Error On Getting Your Quotes!', 'danger')
   console.error(error)
 }
 
 const showQuoteSuccess = function (data) {
-  $('#message').text('Retrieved the quote!')
-  $('#message').css('background-color', 'green')
+  generateMessage('Retieved A Quote Successfully!', 'success')
   console.log(data)
 
   console.log('successfully got one quote')
 }
 
 const showQuoteFailure = function (error) {
-  $('#message').text('Error on getting one quote')
-  $('#message').css('background-color', 'red')
+  generateMessage('Error on Retrieving a Quote!', 'danger')
   console.error(error)
 }
 
 const updateQuoteSuccess = function (data) {
-  $('#message').text('Updated quote!')
-  $('#message').css('background-color', 'green')
+  generateMessage('Updated Quote Successfully!', 'success')
   console.log(data)
 
   console.log('successfully updated quote')
 }
 
 const updateQuoteFailure = function (error) {
-  $('#message').text('Error on updating quote')
-  $('#message').css('background-color', 'red')
+  generateMessage('Error On Updating Quote!', 'danger')
   console.error(error)
 }
 
 const deleteQuoteSuccess = function (data) {
-  $('#message').text('Deleted quote!')
-  $('#message').css('background-color', 'green')
+  generateMessage('Deleted Quote Successfully!', 'success')
 
   console.log('successfully deleted quote')
 }
 
 const deleteQuoteFailure = function (error) {
-  $('#message').text('Error on deleting quote')
-  $('#message').css('background-color', 'red')
+  generateMessage('Error On Deleting Quote!', 'danger')
   console.error(error)
 }
+
+const generateMessage = function (messageText, alertType) {
+  $('body').addClass('hasMessage')
+  pageMessage.text(messageText)
+  const alertStyle = 'alert-' + alertType
+  pageMessage.removeClass().addClass(alertStyle).show()
+  pageMessage.delay(3000).slideToggle(400, function () {
+    $('body').removeClass('hasMessage')
+  })
+}
+
 module.exports = {
   createQuoteSuccess,
   createQuoteFailure,
