@@ -38,10 +38,8 @@ const showQuote = function (id) {
 }
 
 const updateQuote = function (data, quoteid) {
-  console.log(quoteid)
-  const quoteTarget = 'data.quote.' + quoteid
   return $.ajax({
-    url: config.apiUrl + '/quotes/' + quoteTarget,
+    url: config.apiUrl + '/quotes/' + quoteid,
     method: 'PATCH',
     headers: {
       ContentType: 'application/json',

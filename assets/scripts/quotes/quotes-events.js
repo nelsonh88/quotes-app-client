@@ -32,11 +32,10 @@ const onShowQuote = function (event) {
 }
 
 const onUpdateQuote = function (event) {
-  console.log('call update please')
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = event.target.dataset.id
-  console.log(id)
+  console.log('updateQuote is ', event.target)
   api.updateQuote(data, id)
     .then(ui.updateQuoteSuccess)
     .then(api.indexQuotes)
@@ -48,7 +47,6 @@ const onDeleteQuote = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = event.target.dataset.id
-  console.log(id)
   const quote = data.quote
   api.deleteQuote(id)
     .then(ui.deleteQuoteSuccess)
@@ -75,6 +73,10 @@ const addHandlers = () => {
   $('#update-quote').on('submit', onUpdateQuote)
   $('#delete-quote').on('submit', onDeleteQuote)
   $('#content').on('click', '.delete-quote', onDeleteQuote)
+  $('#content').on('click', '.update-quote', function (event) {
+    const quoteid = event.target.dataset.id
+    $('#update-quote').attr('data-id', quoteid)
+  })
   $('#content').on('click', '.add-quote', onAddQuote)
 }
 

@@ -62,23 +62,7 @@
                                 </fieldset>
                               </form>
 
-                              <a class="btn btn-primary update-a-quote" data-toggle="collapse" href="#update-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Quote</a>
-                                <form id="update-quote" class="border collapse">
-                                  <fieldset>
-                                    <div class="form-group">
-                                      <legend>Update Quote</legend>
-                                      <label for="update-quote-id">ID</label>
-                                      <input id="update-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
-                                      <!-- <label for="update-quote-title">Title</label>
-                                      <input id="update-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title"> -->
-                                      <label for="update-quote-quote">Quote</label>
-                                      <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" Required>
-                                      <label for="update-quote-author">Author</label>
-                                      <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" Required>
-                                    </div>
-                                  </fieldset>
-                                  <input class="btn btn-primary" type="submit" value="Update Quote!">
-                                </form>
+
 
                                 <a class="btn btn-primary delete-a-quote" data-toggle="collapse" href="#delete-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Delete a Quote</a>
                                   <form id="delete-quote" class="border collapse">
@@ -253,6 +237,63 @@
     </div>
   </div>
 </div>
+
+<!--Update modal Starts here -->
+
+<div class="modal fade" id="update-quote-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="update-quote-modal-title">Update Quote</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="update-quote" class="border">
+          <fieldset>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-10">Quote</span>
+              </div>
+              <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-20">Author</span>
+              </div>
+              <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" Required>
+            </div>
+
+
+            <input class="btn btn-primary" type="submit" value="Update Quote!">
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <a class="btn btn-primary update-a-quote" data-toggle="collapse" href="#update-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Quote</a>
+  <form id="update-quote" class="border collapse">
+    <fieldset>
+      <div class="form-group">
+        <legend>Update Quote</legend>
+        <label for="update-quote-id">ID</label>
+        <input id="update-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+        <label for="update-quote-title">Title</label>
+        <input id="update-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
+        <label for="update-quote-quote">Quote</label>
+        <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" Required>
+        <label for="update-quote-author">Author</label>
+        <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" Required>
+      </div>
+    </fieldset>
+    <input class="btn btn-primary" type="submit" value="Update Quote!">
+  </form> -->
 
     </body>
 </html>
