@@ -8,8 +8,9 @@ const userTemplate = require('../templates/users-quotes.handlebars')
 // above is for the token as well
 
 const signUpSuccess = function (data) {
-  generateMessage('Signed up Successfully!', 'success')
+  generateMessage('Signed up Successfully! Please Sign-In', 'success')
   $('#sign-up-modal').modal('hide')
+  $('#sign-up-button').hide()
   console.log(data)
   goTop()
 }
@@ -24,13 +25,13 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   generateMessage('Signed in Successfully!', 'success')
   $('#sign-in-modal').modal('hide')
-  $('#quotes-actions').show()
+  $('.show-my-quotes').show()
   $('body').addClass('signed-in')
 
   console.log(data)
   // below is for the token
   store.user = data.user
-  localStorage.setItem('userid', data.user.id)
+  // localStorage.setItem('userid', data.user.id)
   welcomeText(data)
   $('.user').show()
   $('.add-quote').show()
@@ -61,6 +62,8 @@ const signOutSuccess = function (data) {
   console.log('signed out big dawg')
   $('body').removeClass('signed-in')
   $('#quotes-actions').hide()
+  $('.loginbuttons').hide()
+  $('.homepagebutton').show()
   byeText()
   $('#content').hide()
 }

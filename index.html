@@ -23,6 +23,10 @@
                 <div class="container-fluid">
 
                   <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia a massa nec sodales. Nullam auctor lacus eget neque imperdiet ornare vel a arcu.</p>
+
+                  <button id="back-to-index-view">Click me</button>
+
+
                   <div id="quotes-actions">
                       <a class="btn btn-primary create-a-quote" data-toggle="collapse" href="#create-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Create New Quote</a>
                         <form id="create-quote" class="border collapse">
@@ -40,12 +44,12 @@
                           <input class="btn btn-primary" type="submit" value="Create Quote!">
                         </form>
 
-                        <a class="btn btn-primary show-my-quotes" data-toggle="collapse" href="#index-quotes" role="button" aria-expanded="false" aria-controls="collapseExample">Show All Quotes</a>
+                        <a class="btn btn-primary show-my-quotes" data-toggle="collapse" href="#index-quotes" role="button" aria-expanded="false" aria-controls="collapseExample">Get MyQuotes</a>
                           <form id="index-quotes" class="border collapse">
                             <fieldset>
                               <div class="form-group">
-                                <legend>Get All Quotes</legend>
-                                <input class="btn btn-primary" type="submit" value="Get All Quotes!">
+                                <legend>Get MyQuotes</legend>
+                                <input class="btn btn-primary" type="submit" value="Get MyQuotes!">
                               </div>
                             </fieldset>
                           </form>
@@ -93,7 +97,10 @@
 <footer>
   <div class="loginbuttons">
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
-  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+  <button type="button" id="sign-up-button"class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+  </div>
+  <div class="homepagebutton">
+  <button type="button" class="btn btn-outline-secondary">Go Home</button>
   </div>
   <div class="signedinbuttons">
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
@@ -238,7 +245,7 @@
   </div>
 </div>
 
-<!--Update modal Starts here -->
+<!--Below is Update modal Starts here -->
 
 <div class="modal fade" id="update-quote-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -264,7 +271,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default-20">Author</span>
               </div>
-              <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" Required>
+              <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
             </div>
 
 

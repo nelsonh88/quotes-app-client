@@ -6,6 +6,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //   display: none;
 // }
 
+.create-a-quote,
+.show-my-quotes,
+.get-a-quote,
+.delete-a-quote,
+.see-all-users,
+.homepagebutton,
+#back-to-index-view {
+  display: none;
+}
+
+
 body {
   background: url("../images/cloud_background.jpg") no-repeat;
   background-attachment: fixed;
@@ -123,9 +134,9 @@ p.author:before {
     margin-bottom: 2em;
 }
 
-#quotes-actions {
-  display: none;
-}
+// #quotes-actions {
+//   display: none;
+// }
 
 .user {
     border: 1px solid royalblue;
