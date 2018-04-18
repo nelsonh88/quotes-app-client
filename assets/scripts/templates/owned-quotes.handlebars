@@ -2,7 +2,7 @@
 {{#each quotes as |quote|}}
 <div class="quote-block" data-id={{quote.id}}>
   <button class="btn btn-danger delete-quote" data-id={{quote.id}}>Delete</button>
-  <!-- <p class="quoteid">ID: {{quote.id}}</p> -->
+  <p class="quoteid">ID: {{quote.id}}</p>
   <button type="button" class="update-quote btn btn-info update-quote-button" data-id={{quote.id}} data-target="#update-quote-modal" data-toggle="modal">Update</button>
   <p class="quote">{{quote.quote}}</p>
   <p class="author">{{quote.author}}</p>
