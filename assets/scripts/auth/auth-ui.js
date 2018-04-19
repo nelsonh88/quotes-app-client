@@ -25,8 +25,11 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   generateMessage('Signed in Successfully!', 'success')
   $('#sign-in-modal').modal('hide')
+  $('#quotes-actions').show()
   $('.show-my-quotes').show()
   $('body').addClass('signed-in')
+  $('.updatedelete').show()
+  $('#all-quotes').hide()
 
   console.log(data)
   // below is for the token
@@ -62,10 +65,10 @@ const signOutSuccess = function (data) {
   console.log('signed out big dawg')
   $('body').removeClass('signed-in')
   $('#quotes-actions').hide()
-  $('.loginbuttons').hide()
-  $('.homepagebutton').show()
+  $('.loginbuttons').show()
+  $('.user').hide()
+  $('.updatedelete').hide()
   byeText()
-  $('#content').hide()
 }
 
 const signOutFailure = function (error) {

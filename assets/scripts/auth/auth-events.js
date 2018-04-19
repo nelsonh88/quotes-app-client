@@ -37,6 +37,7 @@ const onSignOut = function (event) {
 
   api.signOut(data)
     .then(ui.signOutSuccess)
+    // .then(onShowAllUsers(null))
     .catch(ui.signOutFailure)
 }
 
@@ -58,11 +59,10 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
   $('#index-users').on('submit', onShowAllUsers)
-  // $('#back-to-index-view').on('click', onSignIn)
-  // $('.homepagebutton').on('click', onShowAllUsers)
   onShowAllUsers()
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onShowAllUsers
 }

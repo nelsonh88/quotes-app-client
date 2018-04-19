@@ -7,7 +7,8 @@ const store = require('../store')
 
 const createQuoteSuccess = function (data) {
   generateMessage('Created Quote Successfully!', 'success')
-  console.log(data)
+  $('#create-quote-modal').modal('hide')
+
   goTop()
 }
 
@@ -22,8 +23,8 @@ const indexQuotesSuccess = function (data) {
   console.log('index is ', data.quotes)
   $('.show-my-quotes').hide()
   $('#index-quotes').hide()
+  $('#all-quotes').show()
   $('.create-a-quote').show()
-  $('#back-to-index-view').show()
   const showUsersOwnedQuotesHtml = ownedQuotesTemplate({quotes: data.quotes})
   $('#content').html(showUsersOwnedQuotesHtml)
   console.log('successfully got all quotes')

@@ -12,7 +12,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .delete-a-quote,
 .see-all-users,
 .homepagebutton,
-#back-to-index-view {
+#index-quotes,
+.quotes-filter {
   display: none;
 }
 
@@ -67,6 +68,7 @@ footer button.btn.btn-outline-secondary:first-child {
     margin-bottom: 80px;
     z-index: 2;
     position: relative;
+    max-width: 650px;
 }
 
 .hasMessage .container-fluid {
@@ -172,4 +174,23 @@ p.author:before {
 
 .add-quote {
   display: none;
+}
+
+.signed-in #index-quotes,
+.signed-in .quotes-filter,
+.signed-in .create-a-quote {
+  display: inline-block;
+}
+
+.signed-in .user {
+  display: block;
+}
+button.add-quote {
+    float: right;
+    width: 55%;
+    white-space: normal;
+    background: #3379b7;
+    color: #FFF;
+    max-width: 140px;
+    margin-left: 10px;
 }

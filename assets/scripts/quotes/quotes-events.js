@@ -3,6 +3,7 @@
 const api = require('./quotes-api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./quotes-ui')
+const authEvents = require('../auth/auth-events')
 
 const onCreateQuote = function (event) {
   event.preventDefault()
@@ -19,6 +20,14 @@ const onIndexQuotes = function (event) {
   api.indexQuotes()
     .then(ui.indexQuotesSuccess)
     .catch(ui.indexQuotesFailure)
+}
+
+const onAllQuotes = function (event) {
+  event.preventDefault()
+  authEvents.onShowAllUsers()
+  $('.user').show()
+  $('#all-quotes').hide()
+  $('#index-quotes').show()
 }
 
 const onShowQuote = function (event) {
@@ -68,7 +77,8 @@ const onAddQuote = function (event) {
 
 const addHandlers = () => {
   $('#create-quote').on('submit', onCreateQuote)
-  $('#index-quotes').on('submit', onIndexQuotes)
+  $('#index-quotes').on('click', onIndexQuotes)
+  $('#all-quotes').on('click', onAllQuotes)
   $('#show-quote').on('submit', onShowQuote)
   $('#update-quote').on('submit', onUpdateQuote)
   $('#delete-quote').on('submit', onDeleteQuote)

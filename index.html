@@ -24,35 +24,15 @@
 
                   <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia a massa nec sodales. Nullam auctor lacus eget neque imperdiet ornare vel a arcu.</p>
 
-                  <button id="back-to-index-view">Click me</button>
-
 
                   <div id="quotes-actions">
-                      <a class="btn btn-primary create-a-quote" data-toggle="collapse" href="#create-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Create New Quote</a>
-                        <form id="create-quote" class="border collapse">
-                          <fieldset>
-                            <div class="form-group">
-                              <legend>Create Quote</legend>
-                              <!-- <label for="create-quote-title">Title</label>
-                              <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title"> -->
-                              <label for="create-quote-quote">Quote</label>
-                              <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
-                              <label for="create-quote-author">Author</label>
-                              <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
-                            </div>
-                          </fieldset>
-                          <input class="btn btn-primary" type="submit" value="Create Quote!">
-                        </form>
+                      <button type="button" class="btn btn-primary create-a-quote" data-toggle="modal" data-target="#create-quote-modal">Create Quote</button>
 
-                        <a class="btn btn-primary show-my-quotes" data-toggle="collapse" href="#index-quotes" role="button" aria-expanded="false" aria-controls="collapseExample">Get MyQuotes</a>
-                          <form id="index-quotes" class="border collapse">
-                            <fieldset>
-                              <div class="form-group">
-                                <legend>Get MyQuotes</legend>
-                                <input class="btn btn-primary" type="submit" value="Get MyQuotes!">
+                              <div class="quotes-filter">
+                                <input id="index-quotes" class="btn btn-primary" type="button" value="My Quotes">
+                                <input id="all-quotes" class="btn btn-primary" type="button" value="All Quotes">
                               </div>
-                            </fieldset>
-                          </form>
+
 
                             <a class="btn btn-primary get-a-quote" data-toggle="collapse" href="#show-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Show A Specific Quote</a>
                               <form id="show-quote" class="border collapse">
@@ -98,9 +78,6 @@
   <div class="loginbuttons">
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
   <button type="button" id="sign-up-button"class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
-  </div>
-  <div class="homepagebutton">
-  <button type="button" class="btn btn-outline-secondary">Go Home</button>
   </div>
   <div class="signedinbuttons">
   <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
@@ -301,6 +278,59 @@
     </fieldset>
     <input class="btn btn-primary" type="submit" value="Update Quote!">
   </form> -->
+
+      <!--Create Quote Modal -->
+      <div class="modal fade" id="create-quote-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="create-quote-modal-title">Create Quote</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form id="create-quote" class="border">
+                <fieldset>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default-30">Quote</span>
+                    </div>
+                    <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default-20">Author</span>
+                    </div>
+                    <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
+                  </div>
+
+
+                  <input class="btn btn-primary" type="submit" value="Create Quote!">
+                </fieldset>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <form id="create-quote" class="border collapse">
+        <fieldset>
+          <div class="form-group">
+            <legend>Create Quote</legend> -->
+            <!-- <label for="create-quote-title">Title</label>
+            <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title"> -->
+            <!-- <label for="create-quote-quote">Quote</label>
+            <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
+            <label for="create-quote-author">Author</label>
+            <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
+          </div>
+        </fieldset>
+        <input class="btn btn-primary" type="submit" value="Create Quote!">
+      </form> -->
 
     </body>
 </html>

@@ -9,25 +9,14 @@
     {{#each user.quotes as |quote|}}
     <div class="quote-block">
       {{#if quote}}
+      <button class="add-quote btn btn-dark" data-quote="{{quote.quote}}" data-author="{{quote.author}}" data-id={{quote.id}}>
+        Add To MyQuotes
+      </button>
         <p class="quote">{{quote.quote}}</p>
         <p class="author">{{quote.author}}</p>
       {{else}}
-        Looking for some motivation!
+        <p>User has no quotes</p>
       {{/if}}
     </div>
-    <button class="add-quote" data-quote="{{quote.quote}}" data-author="{{quote.author}}" data-id={{quote.id}}>
-      Add To MyQuotes
-    </button>
     {{/each}}
-
-
-
-
-<!-- {{#if quote.quote}}
-  <p class="quote">{{quote.quote}}</p>
-  <p class="author">{{quote.author}}</p>
-{{else}}
-  Looking for some motivation!
-{{/if}} -->
-
 {{/each}}
