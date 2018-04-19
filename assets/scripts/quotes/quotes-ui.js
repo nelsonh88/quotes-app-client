@@ -8,6 +8,7 @@ const store = require('../store')
 const createQuoteSuccess = function (data) {
   generateMessage('Created Quote Successfully!', 'success')
   $('#create-quote-modal').modal('hide')
+  $('form').trigger('reset')
 
   goTop()
 }
@@ -15,6 +16,7 @@ const createQuoteSuccess = function (data) {
 const createQuoteFailure = function (error) {
   console.log(error)
   generateMessage('Error On Creating Quote!', 'danger')
+  $('form').trigger('reset')
   goTop()
 }
 
@@ -55,6 +57,7 @@ const updateQuoteSuccess = function (data) {
 
   console.log('successfully updated quote')
   $('#update-quote-modal').modal('hide')
+  $('form').trigger('reset')
   goTop()
 }
 
@@ -62,6 +65,7 @@ const updateQuoteFailure = function (error) {
   generateMessage('Error On Updating Quote!', 'danger')
   console.error(error)
   $('#update-quote-modal').modal('hide')
+  $('form').trigger('reset')
   goTop()
 }
 

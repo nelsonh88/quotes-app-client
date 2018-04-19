@@ -13,6 +13,7 @@ const signUpSuccess = function (data) {
   $('#sign-up-button').hide()
   console.log(data)
   goTop()
+  $('form').trigger('reset')
 }
 
 const signUpFailure = function (error) {
@@ -20,6 +21,7 @@ const signUpFailure = function (error) {
   generateMessage('Error on signing up!', 'danger')
   $('#sign-up-modal').modal('hide')
   goTop()
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
@@ -30,6 +32,7 @@ const signInSuccess = function (data) {
   $('body').addClass('signed-in')
   $('.updatedelete').show()
   $('#all-quotes').hide()
+  $('form').trigger('reset')
 
   console.log(data)
   // below is for the token
@@ -45,12 +48,14 @@ const signInFailure = function (error) {
   console.log(error)
   generateMessage('Error on signing in!', 'danger')
   $('#sign-in-modal').modal('hide')
+  $('form').trigger('reset')
   goTop()
 }
 
 const changePasswordSuccess = function (data) {
   generateMessage('Successfully changed password!', 'success')
   $('#change-password-modal').modal('hide')
+  $('form').trigger('reset')
   goTop()
 }
 
@@ -58,6 +63,7 @@ const changePasswordFailure = function (error) {
   console.log(error)
   generateMessage('Error on changing password!', 'danger')
   $('#change-password-modal').modal('hide')
+  $('form').trigger('reset')
   goTop()
 }
 
@@ -87,7 +93,7 @@ const allUsersFailure = function (data) {
 }
 
 const welcomeText = function (data) {
-  const newLede = `Welcome ${data.user.first_name}! Below you will find options to get your quotes and create quotes`
+  const newLede = `Welcome ${data.user.first_name}! Below you will find options to get your quotes and create quotes. You also have access to see what other users have posted for their quotes and if you like their quotes add them to your quotes!`
   $('.lede').text(newLede)
 }
 
