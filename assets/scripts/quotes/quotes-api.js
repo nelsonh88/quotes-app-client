@@ -61,7 +61,6 @@ const deleteQuote = function (id) {
 }
 
 const addQuote = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/quotes',
     method: 'POST',

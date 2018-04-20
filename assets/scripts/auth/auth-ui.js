@@ -11,15 +11,13 @@ const signUpSuccess = function (data) {
   generateMessage('Signed up Successfully! Please Sign-In', 'success')
   $('#sign-up-modal').modal('hide')
   $('#sign-up-button').hide()
-  console.log(data)
   goTop()
   $('form').trigger('reset')
   const newLede = `Welcome ${data.user.first_name}! Thank you for signing up. Please sign in to let MotivationQ motivate you!`
   $('.lede').text(newLede)
 }
 
-const signUpFailure = function (error) {
-  console.log(error)
+const signUpFailure = function () {
   generateMessage('Error on signing up!', 'danger')
   $('#sign-up-modal').modal('hide')
   goTop()
@@ -35,9 +33,6 @@ const signInSuccess = function (data) {
   $('.updatedelete').show()
   $('#all-quotes').hide()
   $('form').trigger('reset')
-
-
-  console.log(data)
   // below is for the token
   store.user = data.user
   // localStorage.setItem('userid', data.user.id)
@@ -47,8 +42,7 @@ const signInSuccess = function (data) {
   goTop()
 }
 
-const signInFailure = function (error) {
-  console.log(error)
+const signInFailure = function () {
   generateMessage('Error on signing in!', 'danger')
   $('#sign-in-modal').modal('hide')
   $('form').trigger('reset')
@@ -62,8 +56,7 @@ const changePasswordSuccess = function (data) {
   goTop()
 }
 
-const changePasswordFailure = function (error) {
-  console.log(error)
+const changePasswordFailure = function () {
   generateMessage('Error on changing password!', 'danger')
   $('#change-password-modal').modal('hide')
   $('form').trigger('reset')
@@ -71,7 +64,6 @@ const changePasswordFailure = function (error) {
 }
 
 const signOutSuccess = function (data) {
-  console.log('signed out big dawg')
   $('body').removeClass('signed-in')
   $('#quotes-actions').hide()
   $('.loginbuttons').show()
@@ -82,8 +74,7 @@ const signOutSuccess = function (data) {
   byeText()
 }
 
-const signOutFailure = function (error) {
-  console.log(error)
+const signOutFailure = function () {
   generateMessage('Error on signing out!', 'danger')
 }
 

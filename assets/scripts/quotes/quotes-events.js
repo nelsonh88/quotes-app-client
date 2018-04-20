@@ -46,7 +46,6 @@ const onUpdateQuote = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = event.target.dataset.id
-  console.log('updateQuote is ', event.target)
   api.updateQuote(data, id)
     .then(ui.updateQuoteSuccess)
     .then(api.indexQuotes)
@@ -55,7 +54,7 @@ const onUpdateQuote = function (event) {
 }
 
 const onDeleteQuote = function (event) {
-  const confirmDelete = confirm("Are you sure you want to delete this quote?");
+  const confirmDelete = confirm('Are you sure you want to delete this quote?')
   if (confirmDelete !== true) {
     return
   }
@@ -71,10 +70,8 @@ const onDeleteQuote = function (event) {
 }
 
 const onAddQuote = function (event) {
-  console.log(event.target)
   event.preventDefault()
   const data = {quote: {quote: event.target.dataset.quote, author: event.target.dataset.author}}
-  console.log(event.target.dataset)
   api.addQuote(data)
     .then(ui.addQuoteSuccessful)
     // .then(() => onCreate(event))

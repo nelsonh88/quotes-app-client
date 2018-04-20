@@ -13,8 +13,7 @@ const createQuoteSuccess = function (data) {
   goTop()
 }
 
-const createQuoteFailure = function (error) {
-  console.log(error)
+const createQuoteFailure = function () {
   generateMessage('Error On Creating Quote!', 'danger')
   $('form').trigger('reset')
   goTop()
@@ -28,7 +27,6 @@ const indexQuotesSuccess = function (data) {
   $('.create-a-quote').show()
   const showUsersOwnedQuotesHtml = ownedQuotesTemplate({quotes: data.quotes})
   $('#content').html(showUsersOwnedQuotesHtml)
-  console.log('successfully got all quotes')
   goTop()
 }
 
@@ -40,21 +38,14 @@ const indexQuotesFailure = function (error) {
 
 const showQuoteSuccess = function (data) {
   generateMessage('Retieved A Quote Successfully!', 'success')
-  console.log(data)
-
-  console.log('successfully got one quote')
 }
 
-const showQuoteFailure = function (error) {
+const showQuoteFailure = function () {
   generateMessage('Error on Retrieving a Quote!', 'danger')
-  console.error(error)
 }
 
 const updateQuoteSuccess = function (data) {
   generateMessage('Updated Quote Successfully!', 'success')
-  console.log(data)
-
-  console.log('successfully updated quote')
   $('#update-quote-modal').modal('hide')
   $('form').trigger('reset')
   goTop()
@@ -70,8 +61,6 @@ const updateQuoteFailure = function (error) {
 
 const deleteQuoteSuccess = function (data) {
   generateMessage('Deleted Quote Successfully!', 'success')
-
-  console.log('successfully deleted quote')
   goTop()
 }
 
@@ -84,18 +73,15 @@ const deleteQuoteFailure = function (error) {
 const indexQuotesSuccessNoMessage = function (data) {
   const showUsersOwnedQuotesHtml = ownedQuotesTemplate({quotes: data.quotes})
   $('#content').html(showUsersOwnedQuotesHtml)
-  console.log('successfully got all quotes')
 }
 
 const addQuoteSuccessful = function (data) {
-  console.log(data)
   generateMessage('Added Quote To MyQuotes Successfully!', 'success')
   store.quote = data.quote
   goTop()
 }
 
-const addQuoteFailure = function (error) {
-  console.log(error)
+const addQuoteFailure = function () {
   generateMessage('Error on Adding Quote!', 'danger')
   goTop()
 }
