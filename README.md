@@ -20,7 +20,8 @@ MotivationQ is a application based on building a community to help its users get
 - HTML
 
 <h2>Process:</br></h2>
-- First made a wireframe https://i.imgur.com/DiGpmd5.jpg</br>
+![](https://i.imgur.com/DiGpmd5.jpg)
+- First made a wireframe </br>
 - Worked on authentication first and made sure that the actions worked.</br>
 - I then basically made a CRUD machine for the quotes resource.</br>
 - Tested all actions and made sure they worked.</br>
