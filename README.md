@@ -33,6 +33,9 @@ MotivationQ is a application based on building a community to help its users get
 - Also want to prepopulate the update field so a user doesn't have to retype the quote and only change whatever part they want to update in that quote.</br>
 - For future additions I want to add a 3rd party API called Twilio where a user will need to input their phone number to get daily quotes from their list.</br>
 - I want to work on some more styling to give the user a better experience.</br>
+- I want to add a feature where users can have other users as friends and when a user clicks on their name it will take them to their persanalized profile.
+- Unsolved problem is when a user has no quotes there is no notifcation of when a user has no quotes
+- I want to implement a search bar so signed insers can search for other users
 
 <h2>User Stories:</br></h2>
 - User stories can be found here: https://imgur.com/OVS1pmF
