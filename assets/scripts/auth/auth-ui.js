@@ -72,6 +72,7 @@ const signOutSuccess = function (data) {
   $('.add-quote').hide()
   $('#sign-up-button').show()
   byeText()
+  goTop()
 }
 
 const signOutFailure = function () {
