@@ -22,7 +22,7 @@
 
                 <div class="container-fluid">
 
-                  <p class="lede">Welcome to MotivationQ a community built to help you get and stay motivated throughout your daily grind! Users can store their favorite quotes that help them stay motivated throughout the day.
+                  <p class="lede">Welcome to <strong>MotivationQ</strong> a community built to help you get and stay motivated throughout your daily grind! Users can store their favorite quotes that help them stay motivated throughout the day.
                     Below you can see all the quotes that have been stored so far in MotivationQ by our motivated users! Sign up below to join the community or sign in below to motivate and get motivated!</p>
 
 
@@ -299,7 +299,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="inputGroup-sizing-default-30">Quote</span>
                     </div>
-                    <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
+                    <textarea id="create-quote-quote" rows="12" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required></textarea>
                   </div>
 
                   <div class="input-group mb-3">
@@ -311,6 +311,39 @@
 
 
                   <input class="btn btn-primary" type="submit" value="Create Quote!">
+                </fieldset>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Delete Quote Modal -->
+      <div class="modal fade" id="delete-quote-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="delete-quote-modal-title">Delete Quote</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form id="delete-quote-form" class="border">
+
+                <fieldset>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default-40">Are you sure you want to delete this quote?</span>
+                    </div>
+                  </div>
+
+                  <button id="ok-to-delete-button" class="btn btn-danger" value="Delete">Delete</button>
+                  <button id="not-ok-to-delete-button" class="btn btn-primary" value="Cancel">Cancel</button>
+
                 </fieldset>
               </form>
 

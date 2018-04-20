@@ -14,6 +14,8 @@ const signUpSuccess = function (data) {
   console.log(data)
   goTop()
   $('form').trigger('reset')
+  const newLede = `Welcome ${data.user.first_name}! Thank you for signing up. Please sign in to let MotivationQ motivate you!`
+  $('.lede').text(newLede)
 }
 
 const signUpFailure = function (error) {
@@ -33,6 +35,7 @@ const signInSuccess = function (data) {
   $('.updatedelete').show()
   $('#all-quotes').hide()
   $('form').trigger('reset')
+
 
   console.log(data)
   // below is for the token
@@ -74,6 +77,8 @@ const signOutSuccess = function (data) {
   $('.loginbuttons').show()
   $('.user').hide()
   $('.updatedelete').hide()
+  $('.add-quote').hide()
+  $('#sign-up-button').show()
   byeText()
 }
 
@@ -83,9 +88,9 @@ const signOutFailure = function (error) {
 }
 
 const allUsersSuccess = function (data) {
-  console.log('data is ', data)
   const showUsersQuotesHtml = userTemplate({users: data.users})
   $('#content').html(showUsersQuotesHtml)
+  $('.signed-in .add-quote').show()
 }
 
 const allUsersFailure = function (data) {

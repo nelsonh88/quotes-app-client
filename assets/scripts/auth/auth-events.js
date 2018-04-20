@@ -33,6 +33,7 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
+  $('#all-quotes').trigger('click')
   const data = getFormFields(event.target)
 
   api.signOut(data)

@@ -22,7 +22,6 @@ const createQuoteFailure = function (error) {
 
 const indexQuotesSuccess = function (data) {
   generateMessage('Got Your Quotes Successfully!', 'success')
-  console.log('index is ', data.quotes)
   $('.show-my-quotes').hide()
   $('#index-quotes').hide()
   $('#all-quotes').show()

@@ -12,11 +12,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .delete-a-quote,
 .see-all-users,
 .homepagebutton,
-#index-quotes,
-.quotes-filter {
+.quotes-filter,
+.add-quote {
   display: none;
 }
-
 
 body {
   background: url("../images/cloud_background.jpg") no-repeat;
@@ -172,11 +171,11 @@ p.author:before {
     text-align: center;
 }
 
-.add-quote {
-  display: none;
-}
+// .add-quote {
+//   display: none;
+// }
 
-.signed-in #index-quotes,
+// .signed-in #index-quotes,
 .signed-in .quotes-filter,
 .signed-in .create-a-quote {
   display: inline-block;
@@ -193,4 +192,9 @@ button.add-quote {
     color: #FFF;
     max-width: 140px;
     margin-left: 10px;
+}
+.user a {
+    color: darkorange;
+    cursor: initial;
+    text-decoration: none;
 }

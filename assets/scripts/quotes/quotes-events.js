@@ -4,6 +4,7 @@ const api = require('./quotes-api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./quotes-ui')
 const authEvents = require('../auth/auth-events')
+const authUi = require('../auth/auth-ui')
 
 const onCreateQuote = function (event) {
   event.preventDefault()
@@ -28,6 +29,7 @@ const onAllQuotes = function (event) {
   $('.user').show()
   $('#all-quotes').hide()
   $('#index-quotes').show()
+  $('.add-quote').show()
 }
 
 const onShowQuote = function (event) {
@@ -53,6 +55,10 @@ const onUpdateQuote = function (event) {
 }
 
 const onDeleteQuote = function (event) {
+  const confirmDelete = confirm("Are you sure you want to delete this quote?");
+  if (confirmDelete !== true) {
+    return
+  }
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = event.target.dataset.id
