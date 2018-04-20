@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>MotivationQ</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Kanit:700" rel="stylesheet">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <div class="brand">
+          <h1><img src="http://nelsonhuezo.com/images/peak.svg" alt="moutain peak logo"/>MotivationQ</h1>
+        </div>
+      </header>
+
+      <p id="message"></p>
+
+                <div class="container-fluid">
+
+                  <p class="lede">Welcome to <strong>MotivationQ</strong> a community built to help you get and stay motivated throughout your daily grind! Users can store their favorite quotes that help them stay motivated throughout the day.
+                    Below you can see all the quotes that have been stored so far in MotivationQ by our motivated users! At the bottom of the screen you can sign up or sign in  to motivate and get motivated!</p>
+
+
+                  <div id="quotes-actions">
+                      <button type="button" class="btn btn-primary create-a-quote" data-toggle="modal" data-target="#create-quote-modal">Create Quote</button>
+
+                              <div class="quotes-filter">
+                                <input id="index-quotes" class="btn btn-primary" type="button" value="MyQuotes">
+                                <input id="all-quotes" class="btn btn-primary" type="button" value="All Quotes">
+                              </div>
+
+
+                            <a class="btn btn-primary get-a-quote" data-toggle="collapse" href="#show-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Show A Specific Quote</a>
+                              <form id="show-quote" class="border collapse">
+                                <fieldset>
+                                  <div class="form-group">
+                                    <legend>Get A Quote</legend>
+                                    <label for="show-quote-id">ID of Quote</label>
+                                    <input id="show-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                                  </div>
+                                  <input class="btn btn-primary" type="submit" value="Get A Quote!">
+                                </fieldset>
+                              </form>
+
+
+
+                                <a class="btn btn-primary delete-a-quote" data-toggle="collapse" href="#delete-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Delete a Quote</a>
+                                  <form id="delete-quote" class="border collapse">
+                                    <fieldset>
+                                      <div class="form-group">
+                                        <legend>Delete A Quote</legend>
+                                        <label for="delete-quote-id">ID of Quote</label>
+                                        <input id="delete-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+                                      </div>
+                                      <input class="btn btn-primary" type="submit" value="Delete A Quote!">
+                                    </fieldset>
+                                  </form>
+
+                                  <a class="btn btn-primary see-all-users" data-toggle="collapse" href="#index-users" role="button" aria-expanded="false" aria-controls="collapseExample">Show All Users</a>
+                                    <form id="index-users" class="border collapse">
+                                      <fieldset>
+                                        <div class="form-group">
+                                          <legend>Get All Users</legend>
+                                          <input class="btn btn-primary" type="submit" value="Get All Users!">
+                                        </div>
+                                      </fieldset>
+                                    </form>
+                                  </div>
+                                  <div id="content"></div>
+                </div>
+
+
+<footer>
+  <div class="loginbuttons">
+  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+  <button type="button" id="sign-up-button"class="btn btn-outline-secondary" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+  </div>
+  <div class="signedinbuttons">
+  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+  <button id="sign-out" type="button" class="btn btn-outline-secondary">Sign Out</button>
+  </div>
+  <div class="made-by">&copy; Copyright 2018, Nelson Huezo</div>
+</footer>
+
+
+<!-- Below is sign-in modal -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sign-in-modal-title">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="sign-in" class="border">
+          <fieldset>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-1">Email</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[email]" aria-label="Default" aria-describedby="inputGroup-sizing-default-1">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-2">Password</span>
+              </div>
+              <input type="password" class="form-control" name="credentials[password]" aria-label="Default" aria-describedby="inputGroup-sizing-default-2">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" value="Sign-in">Sign In</button>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Below is sign-up modal -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sign-up-modal-title">Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="sign-up" class="border">
+          <fieldset>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-3">First Name</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[first_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-3" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-4">Last Name</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[last_name]" aria-label="Default" aria-describedby="inputGroup-sizing-default-4" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-5">Email</span>
+              </div>
+              <input type="text" class="form-control" name="credentials[email]" aria-label="Default" aria-describedby="inputGroup-sizing-default-5" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-6">Password</span>
+              </div>
+              <input type="password" class="form-control" name="credentials[password]" aria-label="Default" aria-describedby="inputGroup-sizing-default-6" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-7">Confirm Password</span>
+              </div>
+              <input type="password" class="form-control" name="credentials[password_confirmation]" aria-label="Default" aria-describedby="inputGroup-sizing-default-7" required>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" value="Sign-up">Sign Up</button>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Below is change-password modal -->
+
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="change-password-modal-title">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="change-password" class="border">
+          <fieldset>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-1">Old Password</span>
+              </div>
+              <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default-8">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-2">Password</span>
+              </div>
+              <input type="password" name="passwords[new]" placeholder="New Password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default-9">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" value="change-password">Change Password</button>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Below is Update modal Starts here -->
+
+<div class="modal fade" id="update-quote-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="update-quote-modal-title">Update Quote</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="update-quote" class="border">
+          <fieldset>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-10">Quote</span>
+              </div>
+              <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default-20">Author</span>
+              </div>
+              <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
+            </div>
+
+
+            <input class="btn btn-primary" type="submit" value="Update Quote!">
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <a class="btn btn-primary update-a-quote" data-toggle="collapse" href="#update-quote" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Quote</a>
+  <form id="update-quote" class="border collapse">
+    <fieldset>
+      <div class="form-group">
+        <legend>Update Quote</legend>
+        <label for="update-quote-id">ID</label>
+        <input id="update-quote-id" class="form-control" type="text" name="quote[id]" placeholder="ID">
+        <label for="update-quote-title">Title</label>
+        <input id="update-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title">
+        <label for="update-quote-quote">Quote</label>
+        <input id="update-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" Required>
+        <label for="update-quote-author">Author</label>
+        <input id="update-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" Required>
+      </div>
+    </fieldset>
+    <input class="btn btn-primary" type="submit" value="Update Quote!">
+  </form> -->
+
+      <!--Create Quote Modal -->
+      <div class="modal fade" id="create-quote-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="create-quote-modal-title">Create Quote</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form id="create-quote" class="border">
+
+                <fieldset>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default-30">Quote</span>
+                    </div>
+                    <textarea id="create-quote-quote" rows="12" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required></textarea>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default-20">Author</span>
+                    </div>
+                    <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
+                  </div>
+
+
+                  <input class="btn btn-primary" type="submit" value="Create Quote!">
+                </fieldset>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Delete Quote Modal -->
+      <!-- <div class="modal fade" id="delete-quote-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="delete-quote-modal-title">Delete Quote</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form id="delete-quote-form" class="border">
+
+                <fieldset>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default-40">Are you sure you want to delete this quote?</span>
+                    </div>
+                  </div>
+
+                  <button id="ok-to-delete-button" class="btn btn-danger" value="Delete">Delete</button>
+                  <button id="not-ok-to-delete-button" class="btn btn-primary" value="Cancel">Cancel</button>
+
+                </fieldset>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <form id="create-quote" class="border collapse">
+        <fieldset>
+          <div class="form-group">
+            <legend>Create Quote</legend> -->
+            <!-- <label for="create-quote-title">Title</label>
+            <input id="create-quote-title" class="form-control" type="text" name="quote[title]" placeholder="Title"> -->
+            <!-- <label for="create-quote-quote">Quote</label>
+            <input id="create-quote-quote" class="form-control" type="text" name="quote[quote]" placeholder="Quote me baby" required>
+            <label for="create-quote-author">Author</label>
+            <input id="create-quote-author" class="form-control" type="text" name="quote[author]" placeholder="Author" required>
+          </div>
+        </fieldset>
+        <input class="btn btn-primary" type="submit" value="Create Quote!">
+      </form> -->
+
+    </body>
+</html>
